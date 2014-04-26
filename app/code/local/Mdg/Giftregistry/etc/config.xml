@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Mdg_Giftregistry>
+            <version>0.1.0</version>
+        </Mdg_Giftregistry>
+    </modules>
+    <global>
+        <blocks>
+            <mdg_giftregistry>
+                <class>Mdg_Giftregistry_Block</class>
+            </mdg_giftregistry>
+        </blocks>
+        <helpers>
+            <mdg_giftregistry>
+                <class>Mdg_Giftregistry_Helper</class>
+            </mdg_giftregistry>
+        </helpers>
+        <models>
+            <mdg_giftregistry>
+                <class>Mdg_Giftregistry_Model</class>
+                <resourceModel>mdg_giftregistry_mysql4</resourceModel>
+            </mdg_giftregistry>
+            
+            <mdg_giftregistry_mysql4>        
+                    <class>Mdg_Giftregistry_Model_Mysql4</class>        
+                    <entities> 
+                        <type>                
+                            <table>mdg_giftregistry_type</table>            
+                        </type>            
+                        <entity>                
+                            <table>mdg_giftregistry_entity</table>            
+                        </entity>            
+                        <item>                
+                            <table>mdg_giftregistry_item</table>            
+                        </item>                  
+                    </entities>    
+           </mdg_giftregistry_mysql4> 
+                
+        </models>
+        <resources>            
+            <mdg_giftregistry_setup>                
+                <setup>                    
+                    <module>Mdg_Giftregistry</module>
+                    <class>Mdg_Giftregistry_Model_Resource_Setup</class>  
+                    <connection>
+                        <use>core_setup</use>
+                    </connection>              
+                </setup>            
+            </mdg_giftregistry_setup>
+            <mdg_giftregistry_write>
+                <connection>
+                    <use>core_write</use>
+                </connection>
+            </mdg_giftregistry_write>
+            <mdg_giftregistry_read>
+                <connection>
+                    <use>core_read</use>
+                </connection>
+            </mdg_giftregistry_read>
+        </resources>
+    </global>
+    
+    <frontend>
+        <routers>            
+            <mdg_giftregistry>                
+                <use>standard</use>                
+                <args>                    
+                    <module>Mdg_Giftregistry</module>                    
+                    <frontName>giftregistry</frontName>                
+                </args>            
+            </mdg_giftregistry>        
+        </routers>    
+    </frontend> 
+    
+</config>
